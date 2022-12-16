@@ -8,17 +8,6 @@
     cursor: url('/images/default.cur'), default;
   }
 
-  a,
-  a *,
-  button,
-  button *,
-  .btn,
-  .btn *,
-  .prose .post-image,
-  .cursor-pointer * {
-    cursor: url('/images/pointer.cur'), pointer;
-  }
-
   html {
     /* transition: background-color 0.5s linear, color 0.25s linear; */
     min-height: 100vh;
@@ -54,6 +43,17 @@
 }
 
 @layer components {
+  a,
+  a *,
+  button,
+  button *,
+  .btn,
+  .btn *,
+  .prose .post-image,
+  .cursor-pointer * {
+    cursor: url('/images/pointer.cur'), pointer;
+  }
+
   #background {
     @apply fixed inset-0 saturate-150 z-[-1];
     background: url('/images/bg.jpg') no-repeat center center fixed;
