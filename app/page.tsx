@@ -1,8 +1,11 @@
-export default function Page() {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <p>Home</p>
-    </div>
-  );
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { supportedLanguages, fallbackLng } from '@/shared/config';
+
+export default function HomeRedirect() {
+  const accepts = headers().get('accept-language') || '';
+  const detected = accepts.split(',')[0].split('-')[0];
+  const validLocale = supportedLanguages.includes(detected) ? detected : fallbackLng;
+  redirect(`/${validLocale}`);
+  return <div>&nbsp;</div>;
 }

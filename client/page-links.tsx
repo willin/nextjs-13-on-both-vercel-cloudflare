@@ -1,7 +1,7 @@
 'use client';
 import clsx from 'classnames';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 export function PageLinks() {
@@ -10,20 +10,36 @@ export function PageLinks() {
   return (
     <nav>
       <Link
-        href='/'
+        href='/zh'
         className={clsx('btn btn-ghost btn-sm relative', {
-          'btn-outline': pathname === '/'
+          'btn-outline': pathname === '/zh'
         })}>
-        Home
-        {pathname === '/' ? <motion.div className='underline' layoutId='underline' /> : null}
+        主页
+        {pathname === '/zh' ? <motion.div className='underline' layoutId='underline' /> : null}
       </Link>
       <Link
-        href='/demo'
+        href='/zh/demo'
         className={clsx('btn btn-ghost btn-sm relative', {
-          'btn-outline': pathname === '/demo'
+          'btn-outline': pathname === '/zh/demo'
+        })}>
+        示例
+        {pathname === '/zh/demo' ? <motion.div className='underline' layoutId='underline' /> : null}
+      </Link>
+      <Link
+        href='/en'
+        className={clsx('btn btn-ghost btn-sm relative', {
+          'btn-outline': pathname === '/en'
+        })}>
+        Home
+        {pathname === '/en' ? <motion.div className='underline' layoutId='underline' /> : null}
+      </Link>
+      <Link
+        href='/en/demo'
+        className={clsx('btn btn-ghost btn-sm relative', {
+          'btn-outline': pathname === '/en/demo'
         })}>
         Demo
-        {pathname === '/demo' ? <motion.div className='underline' layoutId='underline' /> : null}
+        {pathname === '/en/demo' ? <motion.div className='underline' layoutId='underline' /> : null}
       </Link>
     </nav>
   );

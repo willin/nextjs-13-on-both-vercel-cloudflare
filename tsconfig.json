@@ -20,11 +20,12 @@
       }
     ],
     "paths": {
+      "@/app/*": ["./app/*"],
       "@/client/*": ["./client/*"],
       "@/server/*": ["./server/*"],
       "@/shared/*": ["./shared/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "i18n/**/*.json"],
   "exclude": ["node_modules"]
 }
